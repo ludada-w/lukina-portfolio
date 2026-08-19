@@ -1,0 +1,184 @@
+.about {
+  position: relative;
+  min-height: 100svh;
+  overflow: hidden;
+  padding: clamp(110px, 11vh, 150px) clamp(22px, 4vw, 72px) clamp(90px, 10vh, 140px);
+  background:
+    radial-gradient(ellipse 55% 45% at 50% 38%, rgba(192, 225, 245, .34), transparent 72%),
+    radial-gradient(ellipse 36% 42% at 14% 78%, rgba(215, 234, 247, .46), transparent 75%),
+    linear-gradient(180deg, #f7fafc 0%, #edf4f8 54%, #f5f8fa 100%);
+  color: #162233;
+  isolation: isolate;
+}
+
+.lightField {
+  position: absolute;
+  z-index: -1;
+  top: 8%;
+  left: 50%;
+  width: min(86vw, 1300px);
+  height: 58%;
+  border: 1px solid rgba(255, 255, 255, .52);
+  border-radius: 50%;
+  background: radial-gradient(ellipse, rgba(255, 255, 255, .52), rgba(219, 239, 250, .12) 54%, transparent 72%);
+  box-shadow: inset 0 0 90px rgba(255, 255, 255, .32), 0 0 80px rgba(180, 218, 240, .14);
+  filter: blur(1px);
+  transform: translateX(-50%) rotate(-4deg);
+  pointer-events: none;
+}
+
+.particleField {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particleField span {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  opacity: .28;
+  background: #e8f8ff;
+  box-shadow: 0 0 10px rgba(126, 200, 239, .7);
+  animation: particleDrift 9s ease-in-out infinite alternate;
+}
+
+.particleField span:nth-child(1) { top: 14%; left: 9%; }
+.particleField span:nth-child(2) { top: 25%; left: 22%; animation-delay: -3s; }
+.particleField span:nth-child(3) { top: 16%; left: 72%; animation-delay: -5s; }
+.particleField span:nth-child(4) { top: 31%; left: 88%; animation-delay: -2s; }
+.particleField span:nth-child(5) { top: 47%; left: 7%; animation-delay: -7s; }
+.particleField span:nth-child(6) { top: 54%; left: 34%; animation-delay: -1s; }
+.particleField span:nth-child(7) { top: 46%; left: 65%; animation-delay: -4s; }
+.particleField span:nth-child(8) { top: 59%; left: 93%; animation-delay: -6s; }
+.particleField span:nth-child(9) { top: 73%; left: 15%; animation-delay: -2.5s; }
+.particleField span:nth-child(10) { top: 82%; left: 43%; animation-delay: -5.5s; }
+.particleField span:nth-child(11) { top: 76%; left: 73%; animation-delay: -1.5s; }
+.particleField span:nth-child(12) { top: 88%; left: 87%; animation-delay: -7.5s; }
+.particleField span:nth-child(13) { top: 37%; left: 47%; animation-delay: -6.5s; }
+.particleField span:nth-child(14) { top: 67%; left: 56%; animation-delay: -.5s; }
+
+.intro {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.title {
+  margin: 0;
+  font: 760 clamp(84px, 11vw, 184px)/.78 var(--display);
+  letter-spacing: -.085em;
+  text-transform: uppercase;
+  color: transparent;
+  background: linear-gradient(110deg, #152337 7%, #4e6d8e 38%, #9dbed3 62%, #314b69 92%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  filter: drop-shadow(0 14px 32px rgba(57, 88, 116, .1));
+}
+
+.description {
+  width: min(100%, 600px);
+  margin: clamp(38px, 5vh, 64px) auto 0;
+  color: rgba(34, 52, 72, .67);
+  font: 450 clamp(17px, 1.35vw, 22px)/1.55 var(--sans);
+  letter-spacing: -.018em;
+  text-wrap: balance;
+}
+
+.cardsStage {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 1320px);
+  height: clamp(330px, 35vw, 440px);
+  margin: clamp(72px, 9vh, 120px) auto 0;
+}
+
+.cardPosition {
+  position: absolute;
+  width: clamp(250px, 22vw, 310px);
+  rotate: var(--rotation);
+}
+
+.cardPosition:nth-child(1) { top: 18%; left: 1%; }
+.cardPosition:nth-child(2) { top: 39%; left: 26%; }
+.cardPosition:nth-child(3) { top: 5%; left: 51%; }
+.cardPosition:nth-child(4) { top: 31%; right: 1%; }
+
+.card {
+  min-height: 205px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 24px 25px 26px;
+  border: 1px solid rgba(255, 255, 255, .7);
+  border-radius: 24px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, .62), rgba(220, 233, 242, .28)),
+    rgba(238, 246, 250, .24);
+  box-shadow:
+    0 28px 58px rgba(51, 76, 96, .11),
+    inset 0 1px 0 rgba(255, 255, 255, .88),
+    inset 0 -1px 0 rgba(134, 165, 186, .1);
+  -webkit-backdrop-filter: blur(24px) saturate(1.18);
+  backdrop-filter: blur(24px) saturate(1.18);
+  transform: translateZ(0);
+}
+
+.cardTopline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: rgba(40, 60, 80, .42);
+  font: 600 10px/1 var(--mono);
+  letter-spacing: .14em;
+}
+
+.cardTopline i {
+  width: 8px;
+  height: 8px;
+  border: 1px solid rgba(126, 172, 200, .48);
+  border-radius: 50%;
+  background: rgba(226, 246, 255, .78);
+  box-shadow: 0 0 13px rgba(126, 200, 239, .4);
+}
+
+.card h3 {
+  margin: 0 0 13px;
+  color: rgba(24, 40, 58, .88);
+  font: 650 clamp(17px, 1.35vw, 21px)/1.05 var(--sans);
+  letter-spacing: -.035em;
+}
+
+.card p {
+  margin: 0;
+  color: rgba(49, 69, 89, .55);
+  font: 430 13px/1.5 var(--sans);
+}
+
+@keyframes particleDrift {
+  from { translate: -4px 5px; opacity: .16; }
+  to { translate: 7px -9px; opacity: .42; }
+}
+
+@media (max-width: 980px) {
+  .about { padding-right: 24px; padding-left: 24px; }
+  .cardsStage { height: auto; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+  .cardPosition { position: relative; inset: auto !important; width: 100%; }
+}
+
+@media (max-width: 620px) {
+  .about { padding: 96px 18px 100px; }
+  .title { font-size: clamp(68px, 21vw, 98px); }
+  .description { margin-top: 30px; font-size: 16px; }
+  .cardsStage { grid-template-columns: 1fr; gap: 20px; margin-top: 64px; }
+  .cardPosition { rotate: 0deg; }
+  .card { min-height: 182px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .particleField span { animation: none; }
+}
