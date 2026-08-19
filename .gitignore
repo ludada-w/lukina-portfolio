@@ -1,0 +1,18 @@
+# dependencies
+/node_modules
+
+# Next.js output
+/.next
+/out
+
+# local tooling output
+*.log
+*.tsbuildinfo
+
+# environment files
+.env*
+!.env.example
+
+# operating system
+.DS_Store
+Thumbs.db
